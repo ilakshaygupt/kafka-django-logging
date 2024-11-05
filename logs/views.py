@@ -59,5 +59,9 @@ class CreateUserView(APIView):
             logger.error(f"Failed to log to Kafka: {str(e)}")
 
 
+# to create topic go into confluentinc/cp-kafka container
+# < docker exec -it 8531497ae1f2  /bin/bash >
+# then run kafka-topics --create --topic <topic_name> --bootstrap-server kafka:9092 --partitions 1 --replication-factor 1
+
 # to consume bash into confluentinc/cp-kafka:latest using < docker exec -it 8531497ae1f2  /bin/bash >
-# can consume using kafka-console-consumer --bootstrap-server localhost:9092 --topic <topic>
+# can consume using kafka-console-consumer --bootstrap-server localhost:9092 --topic <topic_name>

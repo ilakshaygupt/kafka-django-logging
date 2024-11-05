@@ -3,12 +3,13 @@ from confluent_kafka import Consumer, KafkaException
 from confluent_kafka.cimpl import KafkaError
 from django.conf import settings
 
+
 class Command(BaseCommand):
     help = "Consume messages from Kafka"
 
     def handle(self, *args, **kwargs):
         conf = {
-            "bootstrap.servers": "kafka:9092",
+            "bootstrap.servers": settings.KAFKA_BOOTSTRAP_SERVERS,
             "group.id": "mygroup",
             "auto.offset.reset": "earliest",
         }
