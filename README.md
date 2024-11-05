@@ -12,7 +12,7 @@
 
 1. Clone the repository:
     ```sh
-    git clone <repository_url>
+    git clone https://github.com/ilakshaygupt/kafka-django-logging
     cd kafka_django_logging
     ```
 
@@ -38,6 +38,7 @@
     Replace `<topic_name>` with the topic name specified in your environment variables.
 
 ### Example Environment Variables
+Create a `.env` file in the root directory with the following environment variables:
 
 ```env
 SECRET_KEY = <YOUR_SECRET_KEY>
